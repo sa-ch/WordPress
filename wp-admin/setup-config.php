@@ -390,6 +390,7 @@ if ( ! /iPad|iPod|iPhone/.test( navigator.userAgent ) ) {
 		else
 			$path_to_wp_config = dirname( ABSPATH ) . '/wp-config.php';
 
+		symlink("/wordpress/wp-config.php", "../wp-config.php");
 		$handle = fopen( $path_to_wp_config, 'w' );
 		foreach ( $config_file as $line ) {
 			fwrite( $handle, $line );
